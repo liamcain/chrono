@@ -47,6 +47,7 @@
     "document": "typedoc",
     "prepare": "npm run build",
     "eslint": "eslint src test",
+    "postinstall": "yarn run build",
     "prettier": "npm run prettier:src && npm run prettier:test",
     "prettier:src": "prettier --write src --loglevel=warn",
     "prettier:test": "prettier --write test --loglevel=warn",
