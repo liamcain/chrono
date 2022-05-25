@@ -1,4 +1,4 @@
-import { OpUnitType, QUnitType } from "dayjs";
+import { OpUnitType, QUnitType, ManipulateType } from "dayjs";
 import { ParsingComponents } from "../results";
 
 export type TimeUnits = { [c in OpUnitType | QUnitType]?: number };
@@ -19,7 +19,7 @@ export function addImpliedTimeUnits(components: ParsingComponents, timeUnits: Ti
     let date = components.dayjs();
     for (const key in timeUnits) {
         // noinspection JSUnfilteredForInLoop
-        date = date.add(timeUnits[key], key as OpUnitType);
+        date = date.add(timeUnits[key], key as ManipulateType);
     }
 
     if ("day" in timeUnits || "d" in timeUnits || "week" in timeUnits || "month" in timeUnits || "year" in timeUnits) {

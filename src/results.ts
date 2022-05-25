@@ -3,7 +3,7 @@ import { Component, ParsedComponents, ParsedResult, ParsingReference } from "./i
 import quarterOfYear from "dayjs/plugin/quarterOfYear";
 import weekday from "dayjs/plugin/weekday";
 
-import dayjs, { OpUnitType, QUnitType } from "dayjs";
+import dayjs, { OpUnitType, QUnitType, ManipulateType } from "dayjs";
 import { assignSimilarDate, assignSimilarTime, implySimilarTime } from "./utils/dayjs";
 import { toTimezoneOffset } from "./timezone";
 dayjs.extend(quarterOfYear);
@@ -183,7 +183,7 @@ export class ParsingComponents implements ParsedComponents {
     ): ParsingComponents {
         let date = dayjs(reference.instant);
         for (const key in fragments) {
-            date = date.add(fragments[key as OpUnitType], key as OpUnitType);
+            date = date.add(fragments[key], key as ManipulateType);
         }
 
         const components = new ParsingComponents(reference);
