@@ -34,7 +34,7 @@
     "prettier": "^2.0.5",
     "ts-jest": "^26.1.1",
     "typedoc": "^0.20.36",
-    "typescript": "~4.2.4"
+    "typescript": "4.6.2"
   },
   "husky": {
     "hooks": {
@@ -45,9 +45,7 @@
     "build": "tsc -p tsconfig.build.json",
     "benchmark": "npm run build && node ./benchmark/benchmark.js",
     "document": "typedoc",
-    "prepare": "npm run build",
     "eslint": "eslint src test",
-    "postinstall": "yarn run build",
     "prettier": "npm run prettier:src && npm run prettier:test",
     "prettier:src": "prettier --write src --loglevel=warn",
     "prettier:test": "prettier --write test --loglevel=warn",
@@ -57,7 +55,7 @@
     "coveralls": "npm run test && cat coverage/lcov.info | coveralls"
   },
   "dependencies": {
-    "dayjs": "^1.10.0"
+    "dayjs": "1.10.0"
   },
   "eslintConfig": {
     "env": {
