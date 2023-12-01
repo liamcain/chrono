@@ -49,7 +49,7 @@
     "prettier": "npm run prettier:src && npm run prettier:test",
     "prettier:src": "prettier --write src --loglevel=warn",
     "prettier:test": "prettier --write test --loglevel=warn",
-    "postinstall": "yarn run build",
+    "postinstall": "npm run build",
     "watch": "TZ=UTC jest --watch",
     "test": "TZ=UTC jest --coverage",
     "test:silent": "TZ=UTC jest --silent",
